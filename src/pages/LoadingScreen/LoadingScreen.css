@@ -1,3 +1,4 @@
 .loading-tip {
-  color: #0099fe;
+  /* color: #0099fe; */
+  color: rgba(0,0,0,0.5);
 }

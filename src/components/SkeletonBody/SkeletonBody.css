@@ -8,4 +8,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 3.5rem;
+  box-sizing: border-box;
 }

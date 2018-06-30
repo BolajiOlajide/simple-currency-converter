@@ -1,10 +1,11 @@
 import * as React from 'react';
 
-import LoadingScreen from './pages/LoadingScreen/LoadingScreen.page';
+import ConverterScreen from './pages/ConverterScreen/ConverterScreen.component';
+// import LoadingScreen from './pages/LoadingScreen/LoadingScreen.page';
 
 
 const App = () => <React.Fragment>
-  <LoadingScreen />
+  <ConverterScreen />
 </React.Fragment>;
 
 export default App;

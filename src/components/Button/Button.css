@@ -6,9 +6,12 @@ button {
   color: #FFF;
   font-size: 1.5rem;
   cursor: pointer;
+  border: 0;
+  border-radius: 0.3rem;
 }
 
 button:hover {
   color: #0099fe;
   background: #FFF;
+  border: 1px solid #0099fe;
 }

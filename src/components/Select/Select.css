@@ -1,0 +1,13 @@
+select {
+  width: 10rem;
+  height: 3.5rem;
+  outline: 0;
+  background: #FFF;
+  font-size: 1.5rem;
+  box-sizing: border-box;
+}
+
+.select {
+  display: flex;
+  flex-direction: column;
+}

@@ -13,7 +13,6 @@ const CurrencySelector = (props: any) => <section className="selector-container"
     items={props.items} value={props.currencyOneValue}
     onChange={props.currencyOneChange}
   />
-  <span>↭</span>
   <Select
     label="To"
     items={props.items} value={props.currencyTwoValue}

@@ -11,3 +11,7 @@ body {
   height: 100vh;
   font-family: 'Open Sans Condensed', sans-serif;
 }
+
+label {
+  color: #8d8d8d;
+}

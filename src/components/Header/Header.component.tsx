@@ -1,9 +1,12 @@
 import * as React from 'react';
 
+// styles
+import './Header.css';
 
-const Header = (props: any) => <React.Fragment>
+
+const Header = (props: any) => <div className="header">
   <span>Exchange Rate</span>
-  <span>{props.rate}</span>
-</React.Fragment>;
+  <span className="rate">{props.rate}</span>
+</div>;
 
 export default Header;

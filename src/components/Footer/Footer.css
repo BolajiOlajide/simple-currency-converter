@@ -1,0 +1,9 @@
+.footer {
+  text-align: center;
+}
+
+.footer > a:hover,
+.footer > a:active,
+.footer > a {
+  color: #0499fe;
+}

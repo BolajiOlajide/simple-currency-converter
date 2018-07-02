@@ -4,6 +4,9 @@ import App from './App';
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 
+// toastr
+import 'toastr/build/toastr.min.css';
+
 ReactDOM.render(
   <App />,
   document.getElementById('root') as HTMLElement

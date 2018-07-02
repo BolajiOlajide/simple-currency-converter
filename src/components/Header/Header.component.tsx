@@ -5,7 +5,7 @@ import './Header.css';
 
 
 const Header = (props: any) => <div className="header">
-  <span>Exchange Rate</span>
+  <span className="heading">Exchange Rate</span>
   <span className="rate">{props.rate}</span>
 </div>;
 

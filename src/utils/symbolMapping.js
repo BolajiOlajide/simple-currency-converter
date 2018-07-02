@@ -1,5 +1,5 @@
 const currencySymbolMapping = {
-  KSH: 'Ksh',
+  KSH: 'K',
   NGN: '#',
   USD: '$',
 };

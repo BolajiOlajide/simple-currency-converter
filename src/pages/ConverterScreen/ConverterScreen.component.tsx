@@ -94,15 +94,17 @@ class ConverterScreen extends React.Component {
     const convertedAmount = formattedAmount * rate;
     const symbol = exchangeRate.charAt(0);
 
-    // tslint:disable-next-line
-    console.log(symbol, convertedAmount.toFixed(3));
+    this.setState({
+      convertedAmount: `${symbol}${convertedAmount}`
+    });
 
     return false;
   }
 
   public render() {
     const {
-      amount, items, selectedFromCurrency, selectedToCurrency, exchangeRate
+      amount, items, selectedFromCurrency,
+      selectedToCurrency, exchangeRate, convertedAmount
     } = this.state;
 
     return (
@@ -118,6 +120,7 @@ class ConverterScreen extends React.Component {
           currencyOneChange={this.currencyOneChange}
           currencyTwoChange={this.currencyTwoChange} />
         <Button label="CONVERT" onClick={this.convertCurrency.bind(this, 'Sample')} />
+        <h1>Converted Amount: {convertedAmount}</h1>
       </SkeletonBody>
     );
   }

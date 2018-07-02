@@ -20,7 +20,8 @@ import getExchangeRate from '../../utils/convertCurrency';
 class ConverterScreen extends React.Component {
   public state = {
     amount: '',
-    exchangeRate: 0,
+    convertedAmount: '',
+    exchangeRate: '',
     items: [
       { currency: '🇳🇬 NGN', value: 'NGN' },
       { currency: '🇺🇸 USA', value: 'USD'},
@@ -41,11 +42,9 @@ class ConverterScreen extends React.Component {
       selectedFromCurrency: event.target.value
     }
 
-    let exchangeRate;
     if (selectedToCurrency) {
-      exchangeRate = getExchangeRate(event.target.value, selectedToCurrency);
       // tslint:disable-next-line
-      newState['exchangeRate'] = exchangeRate;
+      newState['exchangeRate'] = getExchangeRate(event.target.value, selectedToCurrency);
     }
 
     this.setState(newState);
@@ -56,12 +55,16 @@ class ConverterScreen extends React.Component {
   public currencyTwoChange = (event: any) => {
     const { selectedFromCurrency } = this.state;
 
-    const exchangeRate = getExchangeRate(selectedFromCurrency, event.target.value);
-
-    this.setState({
-      exchangeRate,
+    const newState = {
       selectedToCurrency: event.target.value
-    });
+    }
+
+    if (selectedFromCurrency) {
+      // tslint:disable-next-line
+      newState['exchangeRate'] = getExchangeRate(selectedFromCurrency, event.target.value);
+    }
+
+    this.setState(newState);
 
     return false;
   }
@@ -72,7 +75,7 @@ class ConverterScreen extends React.Component {
 
   public convertCurrency = () => {
     const {
-      amount, selectedFromCurrency, selectedToCurrency
+      amount, selectedFromCurrency, selectedToCurrency, exchangeRate
     } = this.state;
 
     const formattedAmount = parseFloat(amount);
@@ -86,6 +89,13 @@ class ConverterScreen extends React.Component {
       this.displayError('Please select the currency you\'d like to convert to and from.');
       return false;
     }
+
+    const rate = parseFloat(exchangeRate.slice(1));
+    const convertedAmount = formattedAmount * rate;
+    const symbol = exchangeRate.charAt(0);
+
+    // tslint:disable-next-line
+    console.log(symbol, convertedAmount.toFixed(3));
 
     return false;
   }
